@@ -1,7 +1,11 @@
-<h1>New list :</h1>
+<div class="sticky-top bg-white hidden-spacer"> </div>
 
-<%= render "form", list: @list %>
-
-<div>
-  <%= link_to "Back to lists", lists_path, class: "btn btn-primary" %>
+<div class="row m-5">
+  <div class="col-8 justify-content-center">
+    <h1>New list :</h1>
+    <%= render "form", list: @list %>
+    <div>
+      <%= link_to "Back to lists", lists_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>

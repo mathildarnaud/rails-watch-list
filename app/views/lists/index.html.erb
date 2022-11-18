@@ -1,15 +1,31 @@
-<h1>Your lists</h1>
+<%# <h1>Your lists</h1> %>
 
-<div id="lists justify-content-end">
-  <% @lists.each do |list| %>
-    <p><strong><%= list.name %></strong>
-    <%= link_to "Show", list_path(list), class: "btn btn-primary" %>
-    </p>
-  <% end %>
+<div class="sticky-top bg-white hidden-spacer"> </div>
 
-</li>  <h1><%= link_to "New list", new_list_path,  class: "btn btn-primary" %></h1>
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://assets.lls.fr/pages/6903255/PC.1.17.ENT.ProjecteurCinema-retouche.jpg);">
+  <div class="container text-light d-flex justify content-center">
+    <div class="text " style="margin-bottom: 50px;">
+    <h2>Share your experience Movie lovers for passionate people!</h2>
+    <p>Change your life and find films you love.</p>
+    </div>
+  </div>
 </div>
+
+
+<div class="row mx-auto gx-5 d-flex justify-content-center" style="width: 80%;margin-top: 15px;">
+  <% @lists.each do |list| %>
+  <div class="col-3 card bg-light d-flex align-items-center" style="width: 18rem; margin-top: 15px; margin-bottom: 5px; margin-right: 10px">
+  <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+      <h5 class="list-group-item m-3"><%= list.name %><%= link_to list_path(list) do %>
+      <i class="fa-solid fa-eye d-flex justify-content-center" style="margin-top: 15px"></i>
+      <% end %>
+      </h5>
+  </div>
+  <% end %>
+</div>
+
+
   <%# <%= link_to list_path(list),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
       <%# <i class="fa-solid fa-trash text-danger d-flex justify-content-end"></i> %>
     <%# <% end %>

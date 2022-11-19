@@ -1,13 +1,15 @@
 <%# <h1>Your lists</h1> %>
+<header>
 
+</header>
 <div class="sticky-top bg-white hidden-spacer"> </div>
 
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://assets.lls.fr/pages/6903255/PC.1.17.ENT.ProjecteurCinema-retouche.jpg);">
   <div class="container text-light d-flex justify content-center">
     <div class="text " style="margin-bottom: 50px;">
-    <h2>Share your experience Movie lovers for passionate people!</h2>
-    <p>Change your life and find films you love.</p>
+      <h2>Share your experience Movie lovers for passionate people!</h2>
+      <p>Change your life and find films you love.</p>
     </div>
   </div>
 </div>
@@ -17,9 +19,11 @@
   <% @lists.each do |list| %>
   <div class="col-3 card bg-light d-flex align-items-center" style="width: 18rem; margin-top: 15px; margin-bottom: 5px; margin-right: 10px">
   <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-      <h5 class="list-group-item m-3"><%= list.name %><%= link_to list_path(list) do %>
-      <i class="fa-solid fa-eye d-flex justify-content-center" style="margin-top: 15px"></i>
-      <% end %>
+      <h5 class="list-group-item m-3">
+        <%= list.name %>
+        <%= link_to list_path(list) do %>
+          <i class="fa-solid fa-eye d-flex justify-content-center" style="margin-top: 15px"></i>
+        <% end %>
       </h5>
   </div>
   <% end %>

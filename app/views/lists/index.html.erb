@@ -4,7 +4,6 @@
 </header>
 <div class="sticky-top bg-white hidden-spacer"> </div>
 
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://assets.lls.fr/pages/6903255/PC.1.17.ENT.ProjecteurCinema-retouche.jpg);">
   <div class="container text-light d-flex justify content-center">
     <div class="text " style="margin-bottom: 50px;">
@@ -14,22 +13,23 @@
   </div>
 </div>
 
-
-<div class="row mx-auto gx-5 d-flex justify-content-center" style="width: 80%;margin-top: 15px;">
+<div class="row mx-auto gx-5 d-flex justify-content-center align-items-center" style="width: 80%;margin-top: 15px;">
   <% @lists.each do |list| %>
   <div class="col-3 card bg-light d-flex align-items-center" style="width: 18rem; margin-top: 15px; margin-bottom: 5px; margin-right: 10px">
-  <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-      <h5 class="list-group-item m-3">
-        <%= list.name %>
-        <%= link_to list_path(list) do %>
-          <i class="fa-solid fa-eye d-flex justify-content-center" style="margin-top: 15px"></i>
-        <% end %>
-      </h5>
+    <% if  list.photo.attached?  %>
+      <div class="card-image-top">
+        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+    <% end  %>
+    <h5 class="list-group-item m-3">
+    <%= list.name %>
+    <%= link_to list_path(list) do %>
+      <i class="fa-solid fa-eye d-flex justify-content-center" style="margin-top: 15px"></i>
+    <% end %>
+    <%# <p><%= link_to list_path(list),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <%# <i class="fa-solid fa-trash text-danger d-flex justify-content-end align-items-end"></i> %>
+          <%# <% end %>
+    </h5>
   </div>
   <% end %>
 </div>
-
-
-  <%# <%= link_to list_path(list),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-      <%# <i class="fa-solid fa-trash text-danger d-flex justify-content-end"></i> %>
-    <%# <% end %>

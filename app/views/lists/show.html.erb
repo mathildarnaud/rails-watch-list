@@ -4,6 +4,7 @@
 <div class="row d-flex justify-content-between m-5">
   <div class="col-6">
     <h1> <%= @list.name %></h1>
+    
   </div>
   <div class="col-6 p-2 d-flex justify-content-end ">
     <div class="button m-1"><%= link_to "Add a movie", new_list_bookmark_path(@list), :class =>"btn btn-primary" %></div>
@@ -11,6 +12,7 @@
   </div>
   <p><strong>Movies :</strong></p>
 </div>
+
 
 <div class="row m-3 d-flex justify-content-center" style="margin-bottom: 100px">
   <% @list.bookmarks.each do |bookmark| %>

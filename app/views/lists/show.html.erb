@@ -4,7 +4,7 @@
 <div class="row d-flex justify-content-between m-5">
   <div class="col-6">
     <h1> <%= @list.name %></h1>
-    
+
   </div>
   <div class="col-6 p-2 d-flex justify-content-end ">
     <div class="button m-1"><%= link_to "Add a movie", new_list_bookmark_path(@list), :class =>"btn btn-primary" %></div>
@@ -20,7 +20,7 @@
       <div class="col-3 card m-3 bg-light " style="width: 24rem;">
         <div class="card-body">
           <h5 class="list-group-item">
-          <img class="card-img-top" src=<%= bookmark.movie.poster_url %> alt="Card image cap">
+          <img class="card-img-top img-thumbnail" src=<%= bookmark.movie.poster_url %> alt="Card image cap">
           <h3><%= bookmark.movie.title %></h5>
           <p><strong>Overview : </strong><%= bookmark.movie.overview %></p>
           <p class="list-group-item"><strong>Comments : </strong>"<%= bookmark.comment %>"</p>
